@@ -150,25 +150,30 @@ body {
     display: grid;
     grid-template-columns: 561px 448px; /* Exact Figma proportions */
     gap: var(--hero-gap); /* 111px from Figma */
-    align-items: center;
+    align-items: start; /* Changed from center - text starts at y=31.5px */
     min-height: 448px;
     justify-content: center;
 }
 
+.hero-text {
+    padding-top: 31.5px; /* Figma metadata: text y position */
+}
+
 .hero-text h1 {
-    font-size: var(--font-size-h1); /* 47.8px */
+    font-size: 52px; /* Increased from 47.8px for visual impact */
     font-weight: 800;
-    line-height: var(--line-height-h1); /* 46px from Figma metadata */
+    line-height: 1.15; /* ~60px for 3 lines = 138px total height */
     letter-spacing: -1.584px;
-    margin-bottom: 24px;
+    margin-bottom: 30px; /* Increased from 24px - metadata shows gap to paragraph */
     color: var(--text-dark);
 }
 
 .hero-text p {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px; /* Reduced from 18px for better proportion */
+    line-height: 1.6; /* ~25.6px for more compact look */
     color: var(--text-slate);
-    margin-bottom: 32px;
+    margin-bottom: 28px; /* Reduced from 32px - tighter spacing */
+    max-width: 542px; /* Figma metadata: paragraph width */
 }
 
 .btn-cta {

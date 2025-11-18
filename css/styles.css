@@ -6,15 +6,44 @@
 }
 
 :root {
+    /* Primary Colors (from Figma) */
     --primary-color: #80b9ab;
     --primary-hover: #6da89a;
+    --bg-primary-alpha: rgba(128, 185, 171, 0.5);
+
+    /* Text Colors (from Figma) */
     --text-dark: #111518;
     --text-gray: #6d6e6e;
     --text-slate: #475569;
+    --grays-black: #000000; /* Figma variable */
+
+    /* Background Colors (from Figma) */
     --bg-light: #f6f7f8;
     --bg-white: #ffffff;
+
+    /* Border & Shadows (from Figma) */
     --border-color: #dbe1e6;
     --shadow-sm: 0px 1px 4px -1px rgba(0, 0, 0, 0.3);
+
+    /* Typography Scale (from Figma metadata) */
+    --font-size-h1: 47.8px;
+    --font-size-h2: 30px;
+    --font-size-h3: 18px;
+    --font-size-body: 18px;
+    --font-size-body-sm: 14px;
+    --font-size-body-xs: 12px;
+
+    /* Line Heights (from Figma metadata) */
+    --line-height-h1: 46px;
+    --line-height-h2: 37.5px;
+    --line-height-h3: 22.5px;
+    --line-height-body: 28px;
+
+    /* Spacing Scale (from Figma metadata) */
+    --container-max-width: 1152px; /* Figma: Container width */
+    --hero-gap: 111px; /* Figma: Hero section gap */
+    --services-gap: 25px; /* Figma: Services cards gap */
+    --testimonials-gap: 12px; /* Figma: Testimonials gap */
 }
 
 body {
@@ -26,7 +55,7 @@ body {
 }
 
 .container {
-    max-width: 1232px;
+    max-width: var(--container-max-width); /* 1152px from Figma */
     margin: 0 auto;
     padding: 0 16px;
 }
@@ -102,16 +131,17 @@ body {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 561px 1fr;
-    gap: 48px;
+    grid-template-columns: 561px 448px; /* Exact Figma proportions */
+    gap: var(--hero-gap); /* 111px from Figma */
     align-items: center;
     min-height: 448px;
+    justify-content: center;
 }
 
 .hero-text h1 {
-    font-size: 47.8px;
+    font-size: var(--font-size-h1); /* 47.8px */
     font-weight: 800;
-    line-height: 48px;
+    line-height: var(--line-height-h1); /* 46px from Figma metadata */
     letter-spacing: -1.584px;
     margin-bottom: 24px;
     color: var(--text-dark);
@@ -201,9 +231,10 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 370px); /* Exact Figma card width */
+    gap: var(--services-gap); /* 25px from Figma */
     margin-bottom: 32px;
+    justify-content: center;
 }
 
 .service-card {
@@ -272,8 +303,9 @@ body {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 361px); /* Exact Figma card width */
+    gap: var(--testimonials-gap); /* 12px from Figma */
+    justify-content: center;
 }
 
 .testimonial-card {

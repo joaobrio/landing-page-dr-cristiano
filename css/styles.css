@@ -41,9 +41,26 @@
 
     /* Spacing Scale (from Figma metadata) */
     --container-max-width: 1152px; /* Figma: Container width */
+    --container-padding: 16px;
+    --section-padding-y: 64px;
     --hero-gap: 111px; /* Figma: Hero section gap */
     --services-gap: 25px; /* Figma: Services cards gap */
     --testimonials-gap: 12px; /* Figma: Testimonials gap */
+
+    /* Component Spacing (from Figma metadata) */
+    --card-padding: 24px;
+    --card-gap: 25px;
+
+    /* Border Radius (from Figma) */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    /* Letter Spacing (from Figma metadata) */
+    --letter-spacing-h1: -1.584px;
+    --letter-spacing-h2: -0.45px;
+    --letter-spacing-cta: 0.24px;
 }
 
 body {
@@ -191,9 +208,16 @@ body {
     object-fit: cover;
 }
 
-@media (max-width: 1024px) {
+/* Responsive: Hero Section */
+@media (max-width: 1200px) {
     .hero-content {
         grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero-image {
+        max-width: 448px;
+        margin: 0 auto;
     }
 }
 
@@ -275,15 +299,17 @@ body {
     line-height: 21px;
 }
 
-@media (max-width: 1024px) {
+/* Responsive: Services Grid */
+@media (max-width: 1200px) {
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 370px);
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .services-grid {
         grid-template-columns: 1fr;
+        padding: 0 16px;
     }
 }
 
@@ -353,9 +379,17 @@ body {
     color: var(--text-slate);
 }
 
-@media (max-width: 1024px) {
+/* Responsive: Testimonials Grid */
+@media (max-width: 1150px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 361px);
+    }
+}
+
+@media (max-width: 750px) {
     .testimonials-grid {
         grid-template-columns: 1fr;
+        padding: 0 16px;
     }
 }
 
@@ -563,13 +597,19 @@ body {
 .contact-map {
     border-radius: 16px;
     overflow: hidden;
-    height: 100%;
-    min-height: 300px;
+    width: 533px; /* Figma metadata: exact width */
+    height: 307px; /* Figma metadata: exact height */
 }
 
+/* Responsive: Contact Section */
 @media (max-width: 768px) {
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .contact-map {
+        width: 100%;
+        height: 300px;
     }
 }
 
